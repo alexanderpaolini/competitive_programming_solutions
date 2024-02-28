@@ -1,0 +1,44 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Test standard solution",
+      "type": "shell",
+      "command": "python3 helper/main.py --name=${relativeFileDirname} --input=${input:inputFileInput}",
+      "problemMatcher": [],
+      "options": {
+        "env": {
+          "workspaceFolder": "${workspaceFolder}"
+        }
+      }
+    },
+    {
+      "label": "Create new problem",
+      "type": "shell",
+      "windows": {
+        "command": "mkdir ${input:directory} && cd ${input:directory} && echo.>1.in && echo.>1.out && echo.>solution.py"
+      },
+      "linux": {
+        "command": "mkdir -p ${input:directory} && cd ${input:directory} && touch 1.in && touch 1.out && touch solution.py"
+      },
+      "osx": {
+        "command": "mkdir -p ${input:directory} && cd ${input:directory} && touch 1.in && touch 1.out && touch solution.py"
+      },
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "inputFileInput",
+      "description": "Input file name:",
+      "default": "1.in"
+    },
+    {
+      "type": "promptString",
+      "id": "directory",
+      "description": "Directory Name",
+      "default": ""
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class solution {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int numCases = scanner.nextInt();
+        scanner.nextLine();
+
+        for (int CASE_NUMBER = 0; i < numCases; i++) {
+            
+            
+            
+        }
+
+        scanner.close();
+    }
+}
